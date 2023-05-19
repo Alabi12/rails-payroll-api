@@ -1,0 +1,57 @@
+<%= form_with(model: payroll) do |form| %>
+  <% if payroll.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(payroll.errors.count, "error") %> prohibited this payroll from being saved:</h2>
+
+      <ul>
+        <% payroll.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :basic_salary, style: "display: block" %>
+    <%= form.text_field :basic_salary %>
+  </div>
+
+  <div>
+    <%= form.label :allowance, style: "display: block" %>
+    <%= form.text_field :allowance %>
+  </div>
+
+  <div>
+    <%= form.label :taxable_income, style: "display: block" %>
+    <%= form.text_field :taxable_income %>
+  </div>
+
+  <div>
+    <%= form.label :pension_tier1, style: "display: block" %>
+    <%= form.text_field :pension_tier1 %>
+  </div>
+
+  <div>
+    <%= form.label :pension_tier2, style: "display: block" %>
+    <%= form.text_field :pension_tier2 %>
+  </div>
+
+  <div>
+    <%= form.label :pension_tier3, style: "display: block" %>
+    <%= form.text_field :pension_tier3 %>
+  </div>
+
+  <div>
+    <%= form.label :income_tax, style: "display: block" %>
+    <%= form.text_field :income_tax %>
+  </div>
+
+  <div>
+    <%= form.label :net_pay, style: "display: block" %>
+    <%= form.text_field :net_pay %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
