@@ -1,4 +1,4 @@
-class PayrollsController < ApplicationController
+class Api::V1::PayrollsController < ApplicationController
   before_action :set_payroll, only: [:show, :update, :destroy]
 
   def index
@@ -36,6 +36,8 @@ class PayrollsController < ApplicationController
 
   def set_payroll
     @payroll = Payroll.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: "Payroll not found" }, status: :not_found
   end
 
   def payroll_params

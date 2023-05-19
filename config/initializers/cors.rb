@@ -1,6 +1,6 @@
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ' http://localhost:3000' # Add the origin of your React frontend
+    origins 'http://localhost:3000'
 
     resource '*',
       headers: :any,
@@ -8,5 +8,3 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
       credentials: true
   end
 end
-
-  
